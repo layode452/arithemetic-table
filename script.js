@@ -6,7 +6,6 @@ function add() {
     for(row = 1; row <= inRow.value; row++){
         tableHTML += '<tr>';
         for(col = 1; col <= column.value; col++){
-            console.log(`${col} + ${row} = ${parseFloat(col) + parseFloat(row)}`);
             tableHTML += `<td>${col} + ${row} = ${parseFloat(col) + parseFloat(row)}</td>`
         }
         tableHTML += '</tr>';
@@ -21,7 +20,6 @@ function minus() {
     for(row = 1; row <= inRow.value; row++){
         tableHTML += '<tr>';
         for(col = 1; col <= column.value; col++){
-            console.log(`${col} - ${row} = ${col - row}`);
             tableHTML += `<td>${col} - ${row} = ${col - row}</td>`
         }
         tableHTML += '</tr>';
@@ -36,7 +34,6 @@ function divide() {
     for(row = 1; row <= inRow.value; row++){
         tableHTML += '<tr>';
         for(col = 1; col <= column.value; col++){
-            console.log(`${col} / ${row} = ${col / row}`);
             tableHTML += `<td>${col} / ${row} = ${col / row}</td>`
         }
         tableHTML += '</tr>';
@@ -51,7 +48,6 @@ function times() {
     for(row = 1; row <= inRow.value; row++){
         tableHTML += '<tr>';
         for(col = 1; col <= column.value; col++){
-            console.log(`${col} * ${row} = ${col * row}`);
             tableHTML += `<td>${col} * ${row} = ${col * row}</td>`
         }
         tableHTML += '</tr>';
@@ -60,3 +56,11 @@ function times() {
 
     document.getElementById('tableContainer').innerHTML = tableHTML;
 }
+
+const click = document.getElementById ('check')
+const table = document.getElementById ('tableContainer')
+
+click.addEventListener('click', () =>{
+    table.classList.remove('d-none');
+    table.classList.add('d-block');
+})
